@@ -1,6 +1,14 @@
 let array = [1,2,4,5,6,9,11,22,23,28,32]
 let abcArray = ["a", "b", "c", "d", "e", "f", "g"]
 
+func findLetterIndex (_ array:[String], letter:String) -> Int? {
+    for (index, element) in array.enumerated() {
+        if element == letter {
+            return index
+        }
+    }
+}
+
 func linearSearch<T:Comparable> (array:[T], key:T) -> Int? {
     var iterations = 0
     for (i, element) in array.enumerated() {
@@ -33,5 +41,6 @@ func binarySearch<T:Comparable> (array:[T], searchKey:T) -> Int? {
     return nil
 }
 
+findLetterIndex(abcArray, letter: "g")
 linearSearch(array: abcArray, key: "g")
 binarySearch(array: abcArray, searchKey: "g")
